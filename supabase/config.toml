@@ -1,0 +1,4 @@
+project_id = "xnrxcbpgxoujfvsrrzsq"
+
+[functions.match-robots]
+verify_jwt = false
