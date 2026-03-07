@@ -34,31 +34,32 @@ export interface MatchedRobot extends Robot {
 }
 
 export const ROBOTS: Robot[] = [
-  {
-    id: "logistics_humanoid",
-    name: "Logistics Humanoid",
-    nameJa: "ロジスティクス・ヒューマノイド",
-    image: logisticsHumanoid,
-    category: "Logistics / Supply",
-    categoryJa: "ロジスティクス・供給",
-    physicalTasks: [
-      "Drywall, plywood, stud transport",
-      "Scaffold & temporary material transport",
-      "Fastener & adhesive restocking",
-      "Waste collection, sorting & removal",
-    ],
-    cognitiveTasks: [
-      "Material sorting by task/area",
-      "Staging location selection",
-      "Re-routing based on progress & obstacles",
-      "BIM-linked supply optimization",
-    ],
-    hourlyRate: 40,
-    availableInDays: 2,
-    deploymentDuration: "Up to 60 days",
-    description: "Autonomous material transport and supply chain robot for active construction sites.",
-    descriptionJa: "建設現場での資材運搬・供給チェーンを自動化するヒューマノイドロボット。",
-  },
+   {
+     id: "logistics_humanoid",
+     name: "Logistics Humanoid",
+     nameJa: "ロジスティクス・ヒューマノイド",
+     image: logisticsHumanoid,
+     category: "Logistics / Supply",
+     categoryJa: "ロジスティクス・供給",
+     physicalTasks: [
+       "Drywall, plywood, stud transport",
+       "Scaffold & temporary material transport",
+       "Fastener & adhesive restocking",
+       "Waste collection, sorting & removal",
+     ],
+     cognitiveTasks: [
+       "Material sorting by task/area",
+       "Staging location selection",
+       "Re-routing based on progress & obstacles",
+       "BIM-linked supply optimization",
+     ],
+     hourlyRate: 40,
+     availableInDays: 2,
+     deploymentDuration: "Up to 60 days",
+     description: "Autonomous material transport and supply chain robot for active construction sites.",
+     descriptionJa: "建設現場での資材運搬・供給チェーンを自動化するヒューマノイドロボット。",
+     developmentStatus: "in-development",
+   },
   {
     id: "positioning_humanoid",
     name: "Positioning Humanoid",
