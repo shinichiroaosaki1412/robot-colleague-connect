@@ -24,6 +24,7 @@ export interface Robot {
   description: string;
   descriptionJa: string;
   hasDemo?: boolean;
+  demoUrl?: string;
   developmentStatus?: "in-development" | "demo-available";
 }
 
@@ -114,32 +115,33 @@ export const ROBOTS: Robot[] = [
      descriptionJa: "反復的な取り付け作業を精密な工具操作で行うヒューマノイドロボット。",
      developmentStatus: "in-development",
    },
-   {
-     id: "finishing_humanoid",
-     name: "Finishing Humanoid",
-     nameJa: "仕上げ・ヒューマノイド",
-     image: finishingHumanoid,
-     category: "Finishing / Surface Treatment",
-     categoryJa: "表面処理・仕上げ",
-     physicalTasks: [
-       "Wall & ceiling painting",
-       "Sanding & surface preparation",
-       "Caulking & sealing",
-       "Taping & mudding",
-       "Floor preparation & leveling",
-     ],
-     cognitiveTasks: [
-       "Finish uniformity verification",
-       "Drying & curing timing judgment",
-     ],
-     hourlyRate: 50,
-     availableInDays: 4,
-     deploymentDuration: "Up to 21 days",
-     description: "Surface finishing robot for painting, sanding, caulking, and floor preparation work.",
-     descriptionJa: "塗装・研磨・コーキング・床下地処理を行う仕上げヒューマノイドロボット。",
-     hasDemo: true,
-     developmentStatus: "demo-available",
-   },
+    {
+      id: "finishing_humanoid",
+      name: "Finishing Humanoid",
+      nameJa: "仕上げ・ヒューマノイド",
+      image: finishingHumanoid,
+      category: "Finishing / Surface Treatment",
+      categoryJa: "表面処理・仕上げ",
+      physicalTasks: [
+        "Wall & ceiling painting",
+        "Sanding & surface preparation",
+        "Caulking & sealing",
+        "Taping & mudding",
+        "Floor preparation & leveling",
+      ],
+      cognitiveTasks: [
+        "Finish uniformity verification",
+        "Drying & curing timing judgment",
+      ],
+      hourlyRate: 50,
+      availableInDays: 4,
+      deploymentDuration: "Up to 21 days",
+      description: "Surface finishing robot for painting, sanding, caulking, and floor preparation work.",
+      descriptionJa: "塗装・研磨・コーキング・床下地処理を行う仕上げヒューマノイドロボット。",
+      hasDemo: true,
+      demoUrl: "https://www.loom.com/share/d99c9192aa50466f881a330a0813f732",
+      developmentStatus: "demo-available",
+    },
    {
      id: "maintenance_humanoid",
      name: "Site Maintenance Humanoid",
