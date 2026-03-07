@@ -146,9 +146,21 @@ const ResultsPage = () => {
                   <div>
                     <h3 className="font-heading font-bold text-lg text-foreground">{robot.name}</h3>
                     <p className="text-xs text-muted-foreground">{robot.nameJa}</p>
-                    <Badge variant="outline" className="mt-2 text-xs">
-                      {robot.categoryJa}
-                    </Badge>
+                    <div className="mt-2 flex items-center gap-2 flex-wrap">
+                      <Badge variant="outline" className="text-xs">
+                        {robot.categoryJa}
+                      </Badge>
+                      {robot.developmentStatus === "demo-available" && (
+                        <Badge className="gradient-orange text-primary-foreground font-heading font-bold border-0 text-xs">
+                          Demo Available
+                        </Badge>
+                      )}
+                      {robot.developmentStatus === "in-development" && (
+                        <Badge variant="secondary" className="text-xs">
+                          In Development
+                        </Badge>
+                      )}
+                    </div>
                   </div>
 
                   <p className="text-sm text-muted-foreground italic">"{robot.matchReason}"</p>
