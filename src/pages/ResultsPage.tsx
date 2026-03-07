@@ -1,6 +1,6 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { Bot, ArrowLeft, Clock, Calendar, Zap, Users } from "lucide-react";
+import { Bot, ArrowLeft, Clock, Calendar, Zap, Users, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ROBOTS, type MatchedRobot } from "@/data/robots";
@@ -183,15 +183,27 @@ const ResultsPage = () => {
                       <Calendar className="w-4 h-4" />
                       {format(availDate, "MMM d")} – {format(endDate, "MMM d")}
                     </div>
-                  </div>
+                   </div>
 
-                   <Button
-                     variant="hero"
-                     className="w-full"
-                     onClick={() => setSelectedRobot(robot)}
-                   >
-                     Request {robot.quantity} Unit{robot.quantity > 1 ? 's' : ''}
-                   </Button>
+                    <div className="flex gap-2">
+                      {robot.demoUrl && (
+                        <Button
+                          variant="outline"
+                          className="w-full"
+                          onClick={() => window.open(robot.demoUrl, "_blank")}
+                        >
+                          <Play className="w-4 h-4 mr-2" />
+                          Watch Demo
+                        </Button>
+                      )}
+                      <Button
+                        variant="hero"
+                        className={robot.demoUrl ? "w-full" : "w-full"}
+                        onClick={() => setSelectedRobot(robot)}
+                      >
+                        Request {robot.quantity} Unit{robot.quantity > 1 ? 's' : ''}
+                      </Button>
+                    </div>
                 </div>
               </div>
             );
