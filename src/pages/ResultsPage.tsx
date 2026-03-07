@@ -122,24 +122,48 @@ const ResultsPage = () => {
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {/* Robot Image */}
-                <div className="relative h-48 bg-secondary/50 flex items-center justify-center overflow-hidden">
-                  <img
-                    src={robot.image}
-                    alt={robot.name}
-                    className="h-40 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
-                  />
-                  <div className="absolute top-3 left-3">
-                    <Badge className="gradient-orange text-primary-foreground font-heading font-bold border-0">
-                      {robot.matchScore}% match
-                    </Badge>
-                  </div>
-                  <div className="absolute top-3 right-3">
-                    <Badge className="bg-secondary text-foreground font-heading font-bold border border-border">
-                      <Users className="w-3 h-3 mr-1" />
-                      ×{robot.quantity}
-                    </Badge>
-                  </div>
-                </div>
+                 {robot.demoUrl ? (
+                   <div className="relative">
+                     <div className="aspect-video">
+                       <iframe
+                         src={robot.demoUrl.replace('/share/', '/embed/')}
+                         className="w-full h-full"
+                         frameBorder="0"
+                         allowFullScreen
+                       />
+                     </div>
+                     <div className="absolute top-3 left-3">
+                       <Badge className="gradient-orange text-primary-foreground font-heading font-bold border-0">
+                         {robot.matchScore}% match
+                       </Badge>
+                     </div>
+                     <div className="absolute top-3 right-3">
+                       <Badge className="bg-secondary text-foreground font-heading font-bold border border-border">
+                         <Users className="w-3 h-3 mr-1" />
+                         ×{robot.quantity}
+                       </Badge>
+                     </div>
+                   </div>
+                 ) : (
+                   <div className="relative h-48 bg-secondary/50 flex items-center justify-center overflow-hidden">
+                     <img
+                       src={robot.image}
+                       alt={robot.name}
+                       className="h-40 w-auto object-contain group-hover:scale-105 transition-transform duration-300"
+                     />
+                     <div className="absolute top-3 left-3">
+                       <Badge className="gradient-orange text-primary-foreground font-heading font-bold border-0">
+                         {robot.matchScore}% match
+                       </Badge>
+                     </div>
+                     <div className="absolute top-3 right-3">
+                       <Badge className="bg-secondary text-foreground font-heading font-bold border border-border">
+                         <Users className="w-3 h-3 mr-1" />
+                         ×{robot.quantity}
+                       </Badge>
+                     </div>
+                   </div>
+                 )}
 
                 {/* Content */}
                 <div className="p-5 space-y-4">
@@ -185,25 +209,13 @@ const ResultsPage = () => {
                     </div>
                    </div>
 
-                    <div className="flex gap-2">
-                      {robot.demoUrl && (
-                        <Button
-                          variant="outline"
-                          className="w-full"
-                          onClick={() => window.open(robot.demoUrl, "_blank")}
-                        >
-                          <Play className="w-4 h-4 mr-2" />
-                          Watch Demo
-                        </Button>
-                      )}
-                      <Button
-                        variant="hero"
-                        className={robot.demoUrl ? "w-full" : "w-full"}
-                        onClick={() => setSelectedRobot(robot)}
-                      >
-                        Request {robot.quantity} Unit{robot.quantity > 1 ? 's' : ''}
-                      </Button>
-                    </div>
+                    <Button
+                      variant="hero"
+                      className="w-full"
+                      onClick={() => setSelectedRobot(robot)}
+                    >
+                      Request {robot.quantity} Unit{robot.quantity > 1 ? 's' : ''}
+                    </Button>
                 </div>
               </div>
             );
