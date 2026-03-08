@@ -2,6 +2,7 @@ import { useState, useCallback } from "react";
 import { useNavigate } from "react-router-dom";
 import { Upload, FileText, Bot } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import TopNav from "@/components/sns/TopNav";
 import heroBg from "@/assets/hero-bg.jpg";
 
 const UploadPage = () => {
@@ -71,7 +72,9 @@ const UploadPage = () => {
 
   if (isLoading) {
     return (
-      <div className="min-h-screen flex flex-col items-center justify-center gap-6 gradient-navy">
+      <div className="min-h-screen gradient-navy">
+        <TopNav />
+        <div className="flex flex-col items-center justify-center gap-6" style={{ minHeight: "calc(100vh - 56px)" }}>
         <div className="relative">
           <Bot className="w-16 h-16 text-primary animate-pulse-glow" />
         </div>
@@ -88,12 +91,14 @@ const UploadPage = () => {
             />
           ))}
         </div>
+        </div>
       </div>
     );
   }
 
   return (
     <div className="min-h-screen gradient-navy">
+      <TopNav />
       {/* Hero Section */}
       <div className="relative overflow-hidden">
         <div

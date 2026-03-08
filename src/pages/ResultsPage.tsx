@@ -5,6 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { ROBOTS, type MatchedRobot } from "@/data/robots";
 import BookingModal from "@/components/BookingModal";
+import TopNav from "@/components/sns/TopNav";
 import { addDays, format } from "date-fns";
 
 const ResultsPage = () => {
@@ -51,6 +52,7 @@ const ResultsPage = () => {
 
   return (
     <div className="min-h-screen gradient-navy">
+      <TopNav />
       {/* Header */}
       <div className="container mx-auto px-4 py-6">
         <div className="flex items-center justify-between">
